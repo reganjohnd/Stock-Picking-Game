@@ -12,6 +12,8 @@ int main()
 {
 	shares s[5]{ {"Amazon", 1460.22, 1876.23}, { "Intel", 45.87, 60.98},{ "Pfizer", 43.05, 38.80 },{ "TEVA Pharmaceuticals", 15.30, 10.06 },{ "Mc Donalds", 175.13, 199.09 } };
 	bonds b[3]{ { "Frontier Communications Corporation", 1000, 1000, 92.50 }, { "California Resources Group", 12000, 9000, 80.00 }, { "South African Government Bond", 10000, 10000, 82.95 } };
+	s[0].ssp = 1560.56;
+	s[0].esp = 1900.56;
 
 	cout << s[0].get_name() << s[0].get_ssp() << s[0].get_esp();
 		cout << "You have been chosen to invest in a choice of 5 Stocks and 3 Bonds.\n\nYou have $100,000.00 available\n\n"<< endl;

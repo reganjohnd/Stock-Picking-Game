@@ -20,18 +20,33 @@ public:
 		: name{name}, bfv{bondFaceValue}, bpp{bondPurchasePrice}, bir{bondInterestrate}
 	{}
 
+	//returns the interest earned on the bond in 2019
 	double value() const
 	{
 		return (bfv - bpp) + (bfv * (bir/1000));
 	}
 
+	//returns bond name
 	string get_name()
 	{
 		return name;
 	}
 
+	//returns purchase price of bond
 	double get_bpp()
 	{
 		return bpp;
+	}
+
+	//returns face value of bond
+	int get_bfv()
+	{
+		return bfv;
+	}
+
+	//returns interest rate of bond
+	int get_bir()
+	{
+		return bir / 10;
 	}
 };

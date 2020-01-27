@@ -4,11 +4,8 @@
 #include "securities.h"
 
 
-	
-
-
-double starting_funds{ 100000 };
-double funds_remaining{ starting_funds };
+double starting_funds{ 100000 }; // cash available with which to purchase securities
+double funds_remaining{ starting_funds }; //keeps track of how much money the user has left
 
 //choose which share to purchase
 int s_choose;
@@ -53,5 +50,5 @@ int b_quit{};
 
 string security_plural{ "" };
 
-double all_shares_value{};
-double all_bonds_value{};
+double all_shares_value{}; //value of all the shares purchased by user
+double all_bonds_value{}; // value of all bonds puechased by user

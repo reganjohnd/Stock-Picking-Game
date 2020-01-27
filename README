@@ -1,0 +1,2 @@
+I messed up a bit by not making the members in my 'shares' and 'bonds' classes as arrays.
+When stocks are listed in the 'Purchase Summary' section, the list numbers  arent in order of one of the stocks are skipped.. I'm trying to figure out how to fix that

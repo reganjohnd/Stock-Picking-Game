@@ -14,11 +14,13 @@ void i_funds()
 	cout << "You have insifficent funds." << endl;
 }
 
+//quicker way to print this statement with a word of my choice
 void ns(string security)
 {
 	cout << "Number of "<<security<<" to purchase: " << endl;
 }	
 
+//purchasing shares
 void buy_s(int x)
 {
 	cout << "You chose "<<sn[x]<<"\nCurrent share price: $" << ssp[x] << endl;
@@ -37,6 +39,7 @@ void buy_s(int x)
 	}
 }
 
+//purchasing bonds
 void buy_b(int x)
 {
 	cout << "You chose " << bn[x] << "Current purchase price: $" << bpp[x];
@@ -55,6 +58,7 @@ void buy_b(int x)
 	}
 }
 
+	//provides a summary of all shares and bonds purchased by the user
 	void purchase_summary()
 	{
 		
@@ -96,9 +100,4 @@ void buy_b(int x)
 				cout << bpp[i] << " = $" << tbv[i] << "\n\n";
 			}
 		}
-	}
-
-	void results()
-	{
-		
 	}
