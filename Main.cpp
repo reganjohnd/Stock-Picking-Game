@@ -10,16 +10,19 @@ using namespace std;
 
 int main()
 {
+	//declaring shares and bonds
 	shares s[5]{ {"Amazon", 1460.22, 1876.23}, { "Intel", 45.87, 60.98},{ "Pfizer", 43.05, 38.80 },{ "TEVA Pharmaceuticals", 15.30, 10.06 },{ "Mc Donalds", 175.13, 199.09 } };
 	bonds b[3]{ { "Frontier Communications Corporation", 1000, 1000, 92.50 }, { "California Resources Group", 12000, 9000, 80.00 }, { "South African Government Bond", 10000, 10000, 82.95 } };
+		
 
-	cout << s[0].get_name() << s[0].get_ssp() << s[0].get_esp();
 		cout << "You have been chosen to invest in a choice of 5 Stocks and 3 Bonds.\n\nYou have $100,000.00 available\n\n"<< endl;
+	
+		//prompting user to choose shares or bonds by selecting either "1" or "2". Program will not continue if user does not "1" or "2".
 		do
 		{
-			cout << "Press 1 to start.\n";
+			cout << "Please select a security:\n1. Shares/n2. Bonds" << endl;
 				cin >> sb_choose;
-		} while (sb_choose != 1);
+		} while (sb_choose != 1||2);
 
 		cout << "\n\n";
 
@@ -30,13 +33,16 @@ int main()
 			{
 				cout << "Please choose from the list of shares: " << endl;
 
+				//prints out the list of available shares by iterating over the variable "s" of type "shares".
 				for (int i = 0; i < 5; i++)
 				{
 					cout << i + 1 << ". " << string(s[i].get_name()) << "\t\t Share Price: " << "$" << double(s[i].get_ssp()) << endl;
 				}
 
+				//input for selecting which share to purchase
 				cin >> s_choose;
 
+				//switches to the relevant share based on user input above
 				switch (s_choose)
 				{
 				case 1:
@@ -67,7 +73,9 @@ int main()
 					break;
 				}
 				cout << "Would you like to purchase shares in other stocks?\n1. Yes\n2. No" << endl;
+				//input where user decides to purchase another share or move on to bonds
 				cin >> s_quit;
+				//Selecting "1" allwos user to choose another stock and "2" moves the user on to bonds
 			} while (s_quit == 1);
 
 		case 2:
@@ -76,13 +84,16 @@ int main()
 			{
 				cout << "Please choose from the list of bonds: " << endl;
 
+				//prints the list of bonds available for purchase by iterating over the variable "b" of type "bonds"
 				for (int i = 0; i < 3; i++)
 				{
 					cout << i + 1 << ". " << string(b[i].get_name()) <<"\tFace Value: $"<<int(b[i].get_bfv()) << "\tPurchase Price: $" << b[i].get_bpp() <<"\tInterest: "<<b[i].get_bir()<<"%"<< endl;
 				}
 
+				//user input decides which bonds to go to 
 				cin >> b_choose;
 
+				//switches to the relevant bonds based on user input above
 				switch (b_choose)
 				{
 				case 1:
@@ -102,12 +113,15 @@ int main()
 					break;
 				}
 				cout << "Would you like to purchase additional bonds?\n1.Yes\n2.No" << endl;
+				//user decides to purchase mre bonds or continue
 				cin >> b_quit;
 			} while (b_quit == 1);
 		}
 
+		//provides a summary of all shares and bonds purchased by the user
 		purchase_summary();
 		
+		//iterates over shares to provide a financial summary of purchases and performance
 		for (int i = 0; i < 5; i++)
 		{
 			if (bs[i] > 0)
@@ -139,6 +153,8 @@ int main()
 				all_shares_value = all_shares_value + s[i].value() * bs[i];
 			}
 		}
+
+		//iterates over bonds to proivde a financial summary of purchases and performance
 		for (int i = 0; i < 3; i++)
 		{
 			if (bb[i] > 0)
@@ -168,6 +184,7 @@ int main()
 			all_bonds_value = all_bonds_value + b[i].value();
 		}
 
+		//prints one figure depicting the performance of the shares portfolio
 		cout << "Total shares ";
 		if (all_shares_value > 0)
 		{
@@ -179,6 +196,7 @@ int main()
 		}
 		cout << all_shares_value << "\n";
 
+		//prints one figure depicting the performance of the bonds portfolio
 		cout << "Total bonds ";
 		if (all_bonds_value > 0)
 		{
