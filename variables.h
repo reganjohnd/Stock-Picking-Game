@@ -52,3 +52,5 @@ string security_plural{ "" };
 
 double all_shares_value{}; //value of all the shares purchased by user
 double all_bonds_value{}; // value of all bonds puechased by user
+
+double p1Score[2], p2Score[2]; 

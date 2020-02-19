@@ -207,4 +207,7 @@ int main()
 			cout << " loss: $";
 		}
 		cout << all_bonds_value << "\n";
+
+		p1Score[0] = all_shares_value;
+		p1Score[1] = all_bonds_value;
 }
